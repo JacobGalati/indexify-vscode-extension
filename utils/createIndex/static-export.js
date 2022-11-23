@@ -24,5 +24,6 @@ module.exports.staticExport = (data, relativePath) => {
       exportStart = exportStart.replace("default as", "\n\tdefault as");
     }
   }
+  if (!anonymousOrDefault.length) return `export *${fromPath}`;
   return exportStart + middleExport + fromPath;
 };
